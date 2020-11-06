@@ -8,6 +8,7 @@ debugger
 
 // Routes
 app.use(require('./routes/products'));
+app.use(require('./routes/login'));
 
 
 app.listen(config.port, () => {

@@ -12,7 +12,7 @@ router.get('/products', (req, res) => {
 
 router.get('/products/:id', (req, res) => {
   const { id } = req.params;
-  res.send( products[id - 1] )
-})
+  res.send(products[id - 1]);
+});
 
 module.exports = router;
