@@ -1,4 +1,5 @@
 const express = require('express');
+const { indexOf } = require('../data/products');
 const router = express.Router();
 const products = require('../data/products');
 
@@ -57,4 +58,13 @@ router.put('/products/:id', (req, res) => {
   res.send(product);
 });
 
+/**
+ * Delete methods
+ */
+router.delete('/products/:id', (req, res) => {
+  const { id } = req.params;
+  const product = products[id - 1];
+  products.splice(product, 1);
+  res.send(products);
+});
 module.exports = router;
